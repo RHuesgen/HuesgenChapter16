@@ -1,0 +1,26 @@
+---
+title: "Weather Graphs"
+author: "Ryn Huesgen"
+date: "2023-12-05"
+output: pdf_document
+---
+
+```{r, include=FALSE, message=FALSE}
+library(HuesgenChapter16)
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+```
+
+
+```{r}
+Flagstaff_Weather.2 <- Flagstaff_Weather %>%
+  mutate(Year = year(DATE))
+
+ggplot(Flagstaff_Weather.2 , aes(x=Year, y=SNOW)) + geom_point()
+
+```
+
+
+
+
